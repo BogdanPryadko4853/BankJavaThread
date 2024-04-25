@@ -3,12 +3,22 @@ package org.example.entity;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public class Transaction {
+public class TransactionEntity {
     String name;
     int sumOfTransaction;
     LocalDateTime localDateTime;
     String nameOfBank;
     String nameOfClient;
+
+    int numberOfTransaction;
+
+    public int getNumberOfTransaction() {
+        return numberOfTransaction;
+    }
+
+    public void setNumberOfTransaction(int numberOfTransaction) {
+        this.numberOfTransaction = numberOfTransaction;
+    }
 
     public String getName() {
         return name;
@@ -52,7 +62,7 @@ public class Transaction {
 
     @Override
     public String toString() {
-        return "Transaction{" +
+        return "TransactionEntity{" +
                 "name='" + name + '\'' +
                 ", sumOfTransaction=" + sumOfTransaction +
                 ", localDateTime=" + localDateTime +
@@ -65,7 +75,7 @@ public class Transaction {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Transaction that = (Transaction) o;
+        TransactionEntity that = (TransactionEntity) o;
         return sumOfTransaction == that.sumOfTransaction &&
                 Objects.equals(name, that.name) &&
                 Objects.equals(localDateTime, that.localDateTime) &&
